@@ -1,0 +1,24 @@
+<div class="row" ng-controller="cardCtrl as cardCtrl">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>count</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat=" (key, value) in cardCtrl.data track by $index">
+                <th scope="row">{{key+1}}</th>
+                <td>{{value.title}}</td>
+                <td>{{value.description}}</td>
+                <td>{{value.count}}</td>
+                <td> {{value.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="text-right">Total: {{cardCtrl.setSize().total}}</p>
+    <button class="btn btn-success"> Buy </button>
+</div>

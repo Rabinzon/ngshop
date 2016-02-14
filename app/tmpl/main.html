@@ -1,0 +1,14 @@
+<div class="row" ng-controller="goodCtrl as goodCtrl">
+            <p>{{goodCtrl.size}}</p>
+            <div class="col-xs-3 col-md-3"  ng-repeat="good in goodCtrl.goods">
+                <div class="text-center">
+                     <img src="http://placehold.it/150x150" alt="">
+                     <h5>{{good.title}}</h5>
+                     <p style="height: 120px; overflow: hidden;">{{good.description}}</p>
+                     <span > {{good.price}} P</span>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-success" ng-click="goodCtrl.toCard(good)">Buy</button>
+                </div>
+            </div>
+</div>

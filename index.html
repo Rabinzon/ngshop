@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NgShop</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <style rel="stylesheet">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+    </style>
+</head>
+<body ng-cloak ng-app="App">
+    <div class="fixed-nav">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-brand"><a href="#/main"> ngShop </a></div>
+                <div class="text-right" ></div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/add">New good</a></li>
+                    <li ng-controller="cardCtrl as cardCtrl"><a href="#/card">cart: {{cardCtrl.setSize().size}} total: {{cardCtrl.setSize().total}}</a></li>
+                  </ul>
+            </div>
+        </nav>
+    </div>
+    <section class="container">
+        <ng-view> </ng-view>
+    </section>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/goodCtrl.js"></script>
+    <script src="app/factories/d.js"></script>
+    <script src="app/factories/cardFactory.js"></script>
+    <script src="app/controllers/cardCtrl.js"></script>
+    <script src="app/controllers/addCtrl.js"></script>
+</body>
+</html>
